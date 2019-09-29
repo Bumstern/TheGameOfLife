@@ -147,8 +147,7 @@ int main() {
 			}
 		}
 
-		std::swap(first, second);	// Обмен буферами
-			
+		std::swap(first, second);	// Обмен буферами	
 		window.display();
 		window.clear();
 	}
