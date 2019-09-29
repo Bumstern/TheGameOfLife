@@ -1,9 +1,9 @@
-#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup") // Отключает консоль
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup") // РћС‚РєР»СЋС‡Р°РµС‚ РєРѕРЅСЃРѕР»СЊ
 #include <SFML/Graphics.hpp>
 #include <iostream>
 using namespace sf;
 
-bool **create2D(const int n) {		// Создаёт двумерный массив
+bool **create2D(const int n) {		// РЎРѕР·РґР°С‘С‚ РґРІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ
 	bool **a = new bool *[n + 2];
 	a[0] = new bool[(n + 2) * (n + 2)];
 	for (int i = 1; i < n + 2; i++) {
@@ -19,7 +19,7 @@ void delete2D(bool **a) {
 	a = 0;
 }
 
-int check(int i, int j, bool** first) {		// Считает кол-во живых вокруг клетки (рис. 1)
+int check(int i, int j, bool** first) {		// РЎС‡РёС‚Р°РµС‚ РєРѕР»-РІРѕ Р¶РёРІС‹С… РІРѕРєСЂСѓРі РєР»РµС‚РєРё (СЂРёСЃ. 1)
 	int count = 0;
 	for (int row = i - 1; row <= i + 1; ++row) {
 		for (int col = j - 1; col <= j + 1; ++col) {
@@ -36,15 +36,15 @@ int check(int i, int j, bool** first) {		// Считает кол-во живых вокруг клетки (
 	// . . .
 	// . * .
 	// . . .
-	// рис. 1
+	// СЂРёСЃ. 1
 }
 
 
 int main() {
-	const int N2D = 100, EDGE = 600, pix = EDGE / N2D;			// N2D - размер 2D массива, EDGE - размер стороны 2D массива, pix - размер клетки
-	bool **first = create2D(N2D), **second = create2D(N2D);		// Двумерные массивы
-	bool FlagStart = true, FlagMouse = false;					// Флаги для проверки
-	for (int i = 0; i < N2D + 2; i++) {							// Заполннение начальными знач-ми
+	const int N2D = 100, EDGE = 600, pix = EDGE / N2D;			// N2D - СЂР°Р·РјРµСЂ 2D РјР°СЃСЃРёРІР°, EDGE - СЂР°Р·РјРµСЂ СЃС‚РѕСЂРѕРЅС‹ 2D РјР°СЃСЃРёРІР°, pix - СЂР°Р·РјРµСЂ РєР»РµС‚РєРё
+	bool **first = create2D(N2D), **second = create2D(N2D);		// Р”РІСѓРјРµСЂРЅС‹Рµ РјР°СЃСЃРёРІС‹
+	bool FlagStart = true, FlagMouse = false;					// Р¤Р»Р°РіРё РґР»СЏ РїСЂРѕРІРµСЂРєРё
+	for (int i = 0; i < N2D + 2; i++) {							// Р—Р°РїРѕР»РЅРЅРµРЅРёРµ РЅР°С‡Р°Р»СЊРЅС‹РјРё Р·РЅР°С‡-РјРё
 		for (int j = 0; j < N2D + 2; j++) {
 			first[i][j] = false, second[i][j] = false;
 		}
@@ -53,14 +53,14 @@ int main() {
 	RenderWindow window(VideoMode(EDGE, EDGE), "The Game of Life",  Style::Close);	
 	window.setFramerateLimit(15);
 	
-	RectangleShape rect(Vector2f(pix, pix)); // Живая клетка
-	RectangleShape dead(Vector2f(pix, pix)); // Мертвая клетка
+	RectangleShape rect(Vector2f(pix, pix)); // Р–РёРІР°СЏ РєР»РµС‚РєР°
+	RectangleShape dead(Vector2f(pix, pix)); // РњРµСЂС‚РІР°СЏ РєР»РµС‚РєР°
 	rect.setFillColor(Color::Green);
 	dead.setFillColor(Color::Transparent);
 	dead.setOutlineThickness(-0.5);
 	dead.setOutlineColor(Color(225, 225, 225, 45));
 	
-	//// Рисуем сетку ////
+	//// Р РёСЃСѓРµРј СЃРµС‚РєСѓ ////
 	for (int i = 1; i < N2D + 1; ++i) {
 		for (int j = 1; j < N2D + 1; ++j) {
 			dead.setPosition((i - 1) * pix, (j - 1) * pix);
@@ -90,12 +90,12 @@ int main() {
 				
 		}
 
-		//// Расставление начальных живых ////
+		//// Р Р°СЃСЃС‚Р°РІР»РµРЅРёРµ РЅР°С‡Р°Р»СЊРЅС‹С… Р¶РёРІС‹С… ////
 		if (Mouse::isButtonPressed(Mouse::Left) && window.hasFocus() && FlagMouse == false) {
 			first[(Mouse::getPosition(window).x / pix) + 1][(Mouse::getPosition(window).y / pix) + 1] = true;
 		}
 		
-		for (int i = 1; i < N2D; i++) {		// Бог видел - не хотел я так реализовывать
+		for (int i = 1; i < N2D; i++) {		// Р‘РѕРі РІРёРґРµР» - РЅРµ С…РѕС‚РµР» СЏ С‚Р°Рє СЂРµР°Р»РёР·РѕРІС‹РІР°С‚СЊ
 			for (int j = 1; j < N2D; j++) {
 				if (first[i][j] == true) {
 					rect.setPosition((i - 1) * pix, (j - 1) * pix);
@@ -112,7 +112,7 @@ int main() {
 		window.clear();		
 	}	
 	
-	//// Основной цикл ////
+	//// РћСЃРЅРѕРІРЅРѕР№ С†РёРєР» ////
 	while (window.isOpen()) { 
 		Event evnt;
 		while (window.pollEvent(evnt)) {
@@ -122,7 +122,7 @@ int main() {
 			}
 		}
 
-		for (int i = 1; i < N2D + 1; ++i) {		  // Проверка на живой/мертвый
+		for (int i = 1; i < N2D + 1; ++i) {		  // РџСЂРѕРІРµСЂРєР° РЅР° Р¶РёРІРѕР№/РјРµСЂС‚РІС‹Р№
 			for (int j = 1; j < N2D + 1; ++j) {
 				if (check(i, j, first) == 3 || (check(i, j, first) == 2 && first[i][j] == true)) {
 					second[i][j] = true;
@@ -133,7 +133,7 @@ int main() {
 			}
 		}
 
-		for (int i = 1; i < N2D + 1; ++i) {		//Рисуем из второго буфера
+		for (int i = 1; i < N2D + 1; ++i) {		//Р РёСЃСѓРµРј РёР· РІС‚РѕСЂРѕРіРѕ Р±СѓС„РµСЂР°
 			for (int j = 1; j < N2D + 1; ++j) {
 				first[i][j] = false;
 				if (second[i][j] == true) {
@@ -147,7 +147,7 @@ int main() {
 			}
 		}
 
-		std::swap(first, second);	// Обмен буферами	
+		std::swap(first, second);	// РћР±РјРµРЅ Р±СѓС„РµСЂР°РјРё	
 		window.display();
 		window.clear();
 	}
