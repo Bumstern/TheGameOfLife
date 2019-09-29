@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(77,44): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(77,29): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(98,103): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(98,59): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(125,46): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(125,31): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(130,46): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(130,31): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+  Life.vcxproj -> C:\Users\Bumstern_Inc\source\repos\Life\x64\Debug\Life.exe

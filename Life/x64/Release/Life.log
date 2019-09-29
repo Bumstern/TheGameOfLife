@@ -1,0 +1,17 @@
+﻿  main.cpp
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(66,44): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(66,29): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(101,46): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(101,31): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(105,46): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(105,31): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(140,46): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(140,31): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(144,46): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Bumstern_Inc\source\repos\Life\Life\main.cpp(144,31): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+  Создание кода
+  1 of 10 functions (10.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Life.vcxproj -> C:\Users\Bumstern_Inc\source\repos\Life\x64\Release\Life.exe
